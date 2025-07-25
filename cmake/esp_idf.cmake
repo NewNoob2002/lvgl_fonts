@@ -1,26 +1,27 @@
 # Src files
-file(GLOB_RECURSE AAA_SRCS
-    ${AAA_ROOT_DIR}/src/*.c
-    ${AAA_ROOT_DIR}/src/*.cc
-    ${AAA_ROOT_DIR}/src/*.cpp
+file(GLOB_RECURSE LVGL_FONTS_SRCS
+    ${LVGL_FONTS_ROOT_DIR}/src/*.c
+    ${LVGL_FONTS_ROOT_DIR}/src/*.cc
+    ${LVGL_FONTS_ROOT_DIR}/src/*.cpp
 )
 # Include
-set(AAA_INCS
-    ${AAA_ROOT_DIR}/src/
+set(LVGL_FONTS_INCS
+    ${LVGL_FONTS_ROOT_DIR}/src/
 )
 
 # Public component requirement
-set(AAA_REQUIRES
+set(LVGL_FONTS_REQUIRES
+    lvgl
 )
 
 # Private component requirement
-set(AAA_PRIV_REQUIRES
+set(LVGL_FONTS_PRIV_REQUIRES
 )
 
 # Register component
 idf_component_register(
-    SRCS ${AAA_SRCS}
-    INCLUDE_DIRS ${AAA_INCS}
-    REQUIRES ${AAA_REQUIRES}
-    PRIV_REQUIRES ${AAA_PRIV_REQUIRES}
+    SRCS ${LVGL_FONTS_SRCS}
+    INCLUDE_DIRS ${LVGL_FONTS_INCS}
+    REQUIRES ${LVGL_FONTS_REQUIRES}
+    PRIV_REQUIRES ${LVGL_FONTS_PRIV_REQUIRES}
 )

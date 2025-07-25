@@ -1,29 +1,15 @@
-project(AAA)
-
 # Src files
-file(GLOB_RECURSE AAA_SRCS
-    ${AAA_ROOT_DIR}/src/*.c
-    ${AAA_ROOT_DIR}/src/*.cc
-    ${AAA_ROOT_DIR}/src/*.cpp
+file(GLOB_RECURSE LVGL_FONTS_SRCS
+    ${LVGL_FONTS_ROOT_DIR}/src/*.c
+    ${LVGL_FONTS_ROOT_DIR}/src/*.cc
+    ${LVGL_FONTS_ROOT_DIR}/src/*.cpp
 )
 # Include
-set(AAA_INCS
-    ${AAA_ROOT_DIR}/src/
+set(LVGL_FONTS_INCS
+    ${LVGL_FONTS_ROOT_DIR}/src/
 )
 
 
-add_library(${PROJECT_NAME} ${AAA_SRCS})
-target_include_directories(${PROJECT_NAME} PUBLIC ${AAA_INCS})
-
-
-option(AAA_BUILD_EXAMPLE "Build example" ON)
-
-
-# Example
-if(AAA_BUILD_EXAMPLE)
-    add_subdirectory(./example/)
-endif()
-
-# CTest
-enable_testing()
-add_test(basic example/basic)
+add_library(${PROJECT_NAME} ${LVGL_FONTS_SRCS})
+target_include_directories(${PROJECT_NAME} PUBLIC ${LVGL_FONTS_INCS})
+target_link_libraries(${PROJECT_NAME} PUBLIC lvgl)
