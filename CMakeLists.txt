@@ -1,7 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
 
-project(lvgl_fonts)
-
 set(LVGL_FONTS_ROOT_DIR ${CMAKE_CURRENT_LIST_DIR})
 
 if (ESP_PLATFORM)
